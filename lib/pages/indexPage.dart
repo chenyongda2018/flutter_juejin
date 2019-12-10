@@ -18,7 +18,7 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Container(
-        child: Text('IndexPage')
+        child: Text('首页')
     );
   }
 

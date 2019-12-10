@@ -1,5 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_juejin/pages/bookPage.dart';
+import 'package:flutter_juejin/pages/indexPage.dart';
+import 'package:flutter_juejin/pages/pinsPage.dart';
+import 'package:flutter_juejin/pages/reposPage.dart';
+
+import 'activityPage.dart';
 
 ///主页面
 class MyApp extends StatefulWidget {
@@ -70,7 +76,29 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin{
           theme: ThemeData(
               primaryColor: const Color.fromRGBO(77, 145, 253, 1.0)
           ),
-          home: ,
+          home: new Scaffold(
+            appBar: AppBar(
+              title: Text('Title'),
+            ),
+            body: TabBarView(
+              controller: _tabController,
+              children: <Widget>[
+                IndexPage(),
+                PinsPage(),
+                BookPage(),
+                ReposPage(),
+                ActivityPage(),
+              ],
+            ),
+            bottomNavigationBar: new Material(
+              color: Theme.of(context).primaryColor,
+              child: TabBar(
+                  tabs: _bottomTab,
+                  controller: _tabController,
+                  indicatorColor: Colors.white,
+              ),
+            ),
+          ),
         ),
     );
   }

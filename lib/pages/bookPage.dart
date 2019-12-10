@@ -18,7 +18,7 @@ class _BookPageState extends State<BookPage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Container(
-        child: Text('活动')
+        child: Text('小册')
     );
   }
 
