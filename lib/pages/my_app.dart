@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_juejin/pages/bookPage.dart';
-import 'package:flutter_juejin/pages/indexPage.dart';
-import 'package:flutter_juejin/pages/pinsPage.dart';
-import 'package:flutter_juejin/pages/reposPage.dart';
+import 'package:flutter_juejin/pages/bookp_age.dart';
+import 'package:flutter_juejin/pages/index_page.dart';
+import 'package:flutter_juejin/pages/pins_page.dart';
+import 'package:flutter_juejin/pages/repos_page.dart';
 
-import 'activityPage.dart';
+import 'activity_page.dart';
 
 ///主页面
 class MyApp extends StatefulWidget {

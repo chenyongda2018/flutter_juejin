@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_juejin/model/indexCell.dart';
+import 'package:flutter_juejin/model/index_cell.dart';
 import 'package:flutter_juejin/widgets/goodOrCommentCell.dart';
 import 'package:flutter_juejin/widgets/textDot.dart';
 

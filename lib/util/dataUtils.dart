@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_juejin/model/indexCell.dart';
+import 'package:flutter_juejin/model/index_cell.dart';
 
 class DataUtils {
   ///加载json

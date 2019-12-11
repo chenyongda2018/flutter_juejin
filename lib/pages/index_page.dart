@@ -2,7 +2,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_juejin/model/indexCell.dart';
+import 'package:flutter_juejin/model/index_cell.dart';
 import 'package:flutter_juejin/util/dataUtils.dart';
 import 'package:flutter_juejin/widgets/indexListCell.dart';
 import 'package:flutter_juejin/widgets/indexListHeader.dart';
