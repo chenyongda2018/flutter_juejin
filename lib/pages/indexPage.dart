@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_juejin/model/indexCell.dart';
 import 'package:flutter_juejin/util/dataUtils.dart';
 import 'package:flutter_juejin/widgets/indexListCell.dart';
+import 'package:flutter_juejin/widgets/indexListHeader.dart';
 
 ///活动页面
 class IndexPage extends StatefulWidget {
@@ -18,8 +19,15 @@ class IndexPage extends StatefulWidget {
 
 class _IndexPageState extends State<IndexPage> {
 
-  List<IndexCell> _reslutList;
+  List<IndexCell> _resultList;
 
+  _renderList(context,index) {
+    if(index == 0) {
+      return IndexListHeader(false);
+    } else {
+      return IndexListCell(cellInfo: _resultList[index-1]);
+    }
+  }
 
   @override
   void initState() {
@@ -30,11 +38,14 @@ class _IndexPageState extends State<IndexPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Column(
-      children: <Widget>[
-        Text('indexPage'),
-        IndexListCell(cellInfo: _reslutList[0]),
-      ],
+    if(_resultList.length == 0) {
+      return Center(
+        child : CircularProgressIndicator(),
+      );
+    }
+    return ListView.builder(
+        itemCount: _resultList.length+1,
+        itemBuilder:(context,index) => _renderList(context, index)
     );
   }
 
@@ -43,7 +54,7 @@ class _IndexPageState extends State<IndexPage> {
   _getResultList(bool isLoadMore) {
     DataUtils.getIndexCellListData().then((resultList) {
       setState(() {
-        _reslutList = resultList;
+        _resultList = resultList;
       });
     });
   }

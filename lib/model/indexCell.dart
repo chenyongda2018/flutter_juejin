@@ -4,7 +4,7 @@ import 'package:flutter_juejin/util/dateUtils.dart';
 class IndexCell {
 
   bool hot;
-  String isCollection;
+  String type;
   String tag;
   String username;
   int collectionCount;
@@ -22,7 +22,7 @@ class IndexCell {
         this.commentCount,
         this.title,
         this.detailUrl,
-        this.isCollection});
+        this.type});
 
 
   factory IndexCell.fromJson(Map<String, dynamic> json) {
@@ -35,7 +35,7 @@ class IndexCell {
       createdTime: DateUtils.getTimeDuration(json['createdAt']),
       title: json['title'],
       detailUrl: json['originalUrl'],
-      isCollection: json['type'] ,
+      type: json['type'] ,
     );
   }
 
