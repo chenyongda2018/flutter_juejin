@@ -14,7 +14,7 @@ class IndexListHeader extends StatelessWidget {
     // TODO: implement build
     if(!isLogin) {
       return Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 16.0),
         child: Column(
           children: <Widget>[
             Row(

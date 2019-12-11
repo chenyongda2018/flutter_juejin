@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 ///评论&点赞的Widget
-///
 class GoodAndCommentCell extends StatelessWidget {
   final int collectionCount;
   final int commentCount;
