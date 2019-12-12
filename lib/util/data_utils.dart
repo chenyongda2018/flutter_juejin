@@ -8,13 +8,13 @@ import 'package:flutter_juejin/util/dio_utils.dart';
 class DataUtils {
   ///加载json
   static Future<String> _getAssetsJson() async {
-
     return await rootBundle.loadString('assets/indexListData.json');
   }
 
   ///从json中反序列化数据列表
-  static Future<List<IndexCell>> getIndexCellListData(Map<String,dynamic> params) async {
-    var response = await DioUtil.get(Api.RANK_LIST,params: params);
+  static Future<List<IndexCell>> getIndexCellListData(
+      Map<String, dynamic> params) async {
+    var response = await DioUtil.get(Api.RANK_LIST, params: params);
     var dataList = response["d"]["entrylist"];
 
     List<IndexCell> cellList = new List();

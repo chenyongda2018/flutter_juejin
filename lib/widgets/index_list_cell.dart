@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_juejin/model/index_cell.dart';
 import 'package:flutter_juejin/routers/fluro_routers.dart';
-import 'package:flutter_juejin/widgets/goodOrCommentCell.dart';
-import 'package:flutter_juejin/widgets/textDot.dart';
+import 'package:flutter_juejin/widgets/good_or_comment_cell.dart';
+import 'package:flutter_juejin/widgets/text_dot.dart';
 
 class IndexListCell extends StatelessWidget {
   IndexCell cellInfo;
