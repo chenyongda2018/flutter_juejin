@@ -1,5 +1,5 @@
 
-import 'package:flutter_juejin/util/dateUtils.dart';
+import 'package:flutter_juejin/util/date_utils.dart';
 
 class IndexCell {
 
