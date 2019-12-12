@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_juejin/pages/bookp_age.dart';
+import 'package:flutter_juejin/pages/bookp_page.dart';
 import 'package:flutter_juejin/pages/index_page.dart';
 import 'package:flutter_juejin/pages/pins_page.dart';
 import 'package:flutter_juejin/pages/repos_page.dart';
@@ -101,7 +101,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin{
             ),
           ),
 
-          onGenerateRoute: FluroRouters().,
+          onGenerateRoute: FluroRouters.router.generator,
         ),
     );
   }

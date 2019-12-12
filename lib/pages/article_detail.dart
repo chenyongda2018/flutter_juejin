@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+///文章内容页面
 class ArticleDetail extends StatelessWidget {
   
   final String articleId;
@@ -19,7 +20,7 @@ class ArticleDetail extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          articleId.toString(),
+          articleId.toString()+"\n"+title
         ),
       ),
     );

@@ -7,7 +7,7 @@ import 'package:flutter_juejin/util/dataUtils.dart';
 import 'package:flutter_juejin/widgets/indexListCell.dart';
 import 'package:flutter_juejin/widgets/indexListHeader.dart';
 
-///活动页面
+///主页面
 class IndexPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

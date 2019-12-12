@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_juejin/model/index_cell.dart';
+import 'package:flutter_juejin/routers/fluro_routers.dart';
 import 'package:flutter_juejin/widgets/goodOrCommentCell.dart';
 import 'package:flutter_juejin/widgets/textDot.dart';
 
@@ -19,43 +20,54 @@ class IndexListCell extends StatelessWidget {
     // TODO: implement build
     return new Container(
       padding: const EdgeInsets.symmetric(vertical: 6.0,horizontal: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          //第一行子标题
-          Container(
-            height: 20.0,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: _buildListCellSubTitle(),
-            ),
-          ),
+      
+      child: InkWell(
+        onTap: () {
+          FluroRouters.router.navigateTo(
+            context,
+            "/detail?id=${Uri.encodeComponent(cellInfo.detailUrl)}&title=${Uri.encodeComponent(cellInfo.title)}",
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
 
-          //主标题
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 9.0),
-            child: Text(
-              cellInfo.title,
-              style: TextStyle(
-                color: Color(0xFF393C3F),
-                fontSize: 14.0,
-                fontWeight: FontWeight.w600,
+          children: <Widget>[
+            //第一行子标题
+            Container(
+              height: 20.0,
+
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: _buildListCellSubTitle(),
               ),
-              overflow: TextOverflow.ellipsis,
             ),
-          ),
 
-          //点赞
-          GoodAndCommentCell(
-              cellInfo.collectionCount,
-               cellInfo.commentCount),
-          SizedBox(
-            height: 15.0,
-          ),
-          Divider(
-            height: 2.0,
-          )
-        ],
+            //主标题
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 9.0),
+              child: Text(
+                cellInfo.title,
+                style: TextStyle(
+                  color: Color(0xFF393C3F),
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w600,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+
+            //点赞
+            GoodAndCommentCell(
+                cellInfo.collectionCount,
+                cellInfo.commentCount),
+            SizedBox(
+              height: 15.0,
+            ),
+            Divider(
+              height: 2.0,
+            )
+          ],
+        ),
       ),
     );
   }
