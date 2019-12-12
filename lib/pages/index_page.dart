@@ -38,7 +38,7 @@ class _IndexPageState extends State<IndexPage> {
       //对滑动页面是否已经到了最低端的检测
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) {
-        _getResultList(true);
+        _getResultList(true);//到了最低端触发再次请求数据
       }
     });
   }
@@ -51,13 +51,14 @@ class _IndexPageState extends State<IndexPage> {
         child: CircularProgressIndicator(),
       );
     }
+    //上拉加载,下拉刷新控件
     return RefreshIndicator(
       child: ListView.builder(
         itemCount: _resultList.length + 2,
         itemBuilder: (context, index) => _renderListWidget(context, index),
         controller: _scrollController,
       ),
-      onRefresh: _onRefresh,
+      onRefresh: _onRefresh,//上拉刷新时调用的方法。
     );
   }
 
